@@ -16,7 +16,7 @@ const getAllMessages = (response) => {
 
 const addMessage = (newMessage, response) => {
   messages.push(newMessage)
-  response.writeHead(response.statusCode, { 'Content-Type' : 'text/plain' });
+  response.writeHead(201, { 'Content-Type' : 'text/plain' });
   const freshMessage = messages[messages.length - 1];
   response.write(JSON.stringify(freshMessage));
   response.end();
